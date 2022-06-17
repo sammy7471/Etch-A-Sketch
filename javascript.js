@@ -11,7 +11,7 @@ function createGrid(num) {
         container.appendChild(square);
         // Set an addEventListener for a hover effect so the grid changes color when the mouse is moved over them.
         square.addEventListener("mouseover", () => {
-            square.style.backgroundColor = "blue";
+            square.style.backgroundColor = generateRandomColor();
         });
     }
 }
@@ -23,3 +23,8 @@ button.addEventListener("click", () => {
     document.getElementById("container").innerText = "";
     createGrid(input);
 });
+
+function generateRandomColor () {
+    let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+}
